@@ -1,0 +1,20 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="topbar">
+
+  <label class="autocheck-label" routerLink="/home" style="font-size: 20px">Autocheck</label>
+
+  <div class="buttons">
+    <button class="buton_nav" *ngIf="showProfileButton || (showUser || showAdmin)" routerLink="/home">Home</button>
+    <button class="buton_nav" *ngIf="showProfileButton || (showUser || showAdmin)" (click)="goToHome('contact')">Contact</button>
+<!--    <button class="buton_nav" *ngIf="showProfileButton || (showUser || showAdmin)" (click)="goToHome('about')">About us</button>-->
+  </div>
+  <div class="profile-buttons">
+    <button class="butonu" *ngIf="showProfileButton && (showUser || showAdmin)" (click)="redirectToProfile()">Profile</button>
+    <button  class="butonu" *ngIf="showProfileButton && !(showUser || showAdmin)" routerLink="/login">Login</button>
+    <button class="butonu"  *ngIf="!showProfileButton && (showUser || showAdmin)" (click)="logout()">Logout</button>
+  </div>
+
+
+</div>
+<router-outlet></router-outlet>

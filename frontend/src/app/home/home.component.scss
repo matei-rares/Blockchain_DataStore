@@ -1,0 +1,209 @@
+//////////////////////////////searchbar
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.photo-container {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+
+.photo-container::before {
+  content: "";
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  background-image: url('roti_wide.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+}
+
+.searchbar {
+  z-index: 1;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  form{
+    margin-top: 20px;
+
+  }
+}
+
+///////////////////////////////// features
+.features-container {
+  h3 {
+    margin-left: 30px;
+  }
+  button {
+    margin-top:10px;
+    margin-left: 30px;
+     }
+
+  .features {
+    display: flex;
+    justify-content: space-between;
+
+    .feature-item {
+      margin-right: 30px;
+      margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+
+      //align-items: center;
+      //text-align: center;
+
+      img {
+
+        width: calc(100%); // latime relativa la parinte
+        height: 200px;
+        border-radius: 10px;
+        object-fit: cover;
+        margin: 0 auto;
+        max-width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .img1{
+        background-image: url('accuracy.jpg');
+      }
+      .img2{
+        background-image: url('details.jpg');
+        background-position: left;
+      }
+      .img3{
+        background-image: url('easy.jpg');
+
+
+      }
+
+      h4 {
+        margin-top: 10px;
+
+      }
+
+      @media (max-width: 500px) {
+
+        features{
+          width: 10px;
+        }
+          .feature-item {
+            margin-right: 0;
+            margin-left: 0;
+
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+          }
+            img {
+              background-image: url('roti_wide.jpg');
+              width:50px; // latime relativa la parinte
+              height: 50px;
+              border-radius: 10px;
+              object-fit: cover;
+              max-width: 100%;
+
+            }
+
+            h4 {
+              margin-top: 10px;
+
+            }
+          label{
+            max-width: 1%;
+          }
+
+      }
+    }
+  }
+}
+////////////////////////////////
+///////////////////////////////contact-about
+
+//.footer {
+//  width: 100%;
+//  display: flex;
+//  flex-direction: column;
+//  align-items: center;
+//  margin-top: auto;
+//  padding-bottom: 0;
+//
+//  textarea {
+//    min-width: 50%;
+//    min-height: 15%;
+//  }
+//}
+//
+//.about-us {
+//  display: flex;
+//  justify-content: space-between;
+//
+//  .about-item {
+//    margin-right: 30px;
+//    margin-left: 30px;
+//    display: flex;
+//    flex-direction: column;
+//    width: 250px;}}
+.contact {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+
+
+  h3, label {
+    margin-bottom: 10px;
+
+  }
+
+  .name-email {
+    margin-top:10px;
+    width:calc(100%);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    input{
+      max-width:40%;
+    }
+  }
+
+   textarea {
+    width: calc(100%);
+     padding: 8px;
+     margin-bottom: 10px;
+
+   }
+
+}
+
+
+
+/////////////////
+
+.validation-message-chassis {
+  position: absolute;
+  background-color: #ffe6e6;
+  border: 1px solid #ff9999;
+  color: #ff3333;
+  left:20%;
+  #padding: 4px;
+  #margin-left: -0.1%;
+  border-radius: 8px;
+  z-index: 999;
+
+  ::before {
+    content: '';
+    position: absolute;
+  }
+}

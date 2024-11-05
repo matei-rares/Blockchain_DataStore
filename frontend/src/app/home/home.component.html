@@ -1,0 +1,92 @@
+<div class="content">
+
+  <div class="photo-container">
+    <div class="overlay"></div>
+
+    <div class="searchbar">
+
+
+      <h2 id="searchGo">Search any car!</h2>
+      <label> Enter any VIN to unlock valuable insights and make the perfect choice!</label>
+      <form [formGroup]="searchForm" (ngSubmit)="searchCar($event)">
+        <input type="text" id="chassisField" formControlName="chassisField">
+        <button class="butonu" type="submit">Search</button>
+        <div *ngIf="showChassisError" class="validation-message-chassis">
+          {{ errorMessage }}
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="features-container">
+    <h3>Features</h3>
+    <div class="features">
+      <div class="feature-item">
+        <img class="img1">
+        <h4>Accurate Results</h4>
+        <label>Get precice information about the car based on its VIN  </label>
+      </div>
+
+      <div class="feature-item">
+        <img class="img2">
+        <h4>Detailed history</h4>
+        <label>Access comprehensive details about the vehicle's past records </label>
+      </div>
+      <div class="feature-item">
+        <img class="img3">
+        <h4>Easy to Use</h4>
+        <label>User-friendly interface for a seamless car search experience </label>
+      </div>
+    </div>
+
+    <button class="butonu" (click)="goToSearch()"> Search cars</button>
+
+  </div>
+
+
+  <div class="footer">
+    <div class="contact" id="contact">
+      <h3>Contact us</h3>
+      <label>If you want to become a collaborator send us an email!</label>
+      <form [formGroup]="registerForm" (ngSubmit)="sendRegistration($event)">
+          <div class="name-email">
+            <input type="text"  placeholder="Name" formControlName="nameField">
+            <input type="email" placeholder="Email" formControlName="emailField">
+          </div>
+          <textarea id="reasons" formControlName="textField" placeholder="Tell us your reasons"></textarea>
+        <button class="butonu" type="submit" >Send</button> <!--[disabled]="registerForm.invalid"-->
+      </form>
+    </div>
+
+    <!--    <div id="about">-->
+    <!--      <h3>About us</h3>-->
+    <!--      <div class="about-us">-->
+    <!--        <div class="about-item">-->
+    <!--          <img class="imga1">-->
+    <!--          <h3>email</h3>-->
+    <!--          <label>info@autocheck.com</label>-->
+    <!--        </div>-->
+
+    <!--        <div class="about-item">-->
+    <!--          <img class="imga2">-->
+    <!--          <h3>phone</h3>-->
+    <!--          <label>073954833</label>-->
+    <!--        </div>-->
+
+    <!--        <div class="about-item">-->
+    <!--          <img class="imga3">-->
+    <!--          <h3>office</h3>-->
+    <!--          <label>Strada Patelui nr 4</label>-->
+    <!--        </div>-->
+
+    <!--        <div class="about-item">-->
+    <!--          <img class="imga4">-->
+    <!--          <h3>office</h3>-->
+    <!--          <label>Facebook (link), instagram(link), twitter ()</label>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+  </div>
+</div>

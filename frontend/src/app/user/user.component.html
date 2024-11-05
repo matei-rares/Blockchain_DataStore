@@ -1,0 +1,186 @@
+<div class="user">
+  <h2>Car manager</h2>
+
+  <div class="topbar">
+    <div class="autocomplete-container" (mouseleave)="showSuggestions=false" (mouseenter)="showSuggestions=true">
+      <input type="text" placeholder="Chassis" [formControl]="searchControl">
+      <div class="suggestions" *ngIf="showSuggestions && (filteredOptions | async)!.length > 0">
+        <div class="suggestion" *ngFor="let option of filteredOptions | async" (click)="selectOption(option)">
+          {{ option }}
+        </div>
+      </div>
+      <button class="butonu" (click)="chooseCar()" (mouseenter)="showSuggestions=false">Choose car</button>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="sidebar">
+      <button class="buton_nav" (click)="changeView('AddCar')">Add car</button>
+      <ng-template [ngIf]="currentChassis !== '' ">
+        <br>
+        <button class="buton_nav" (click)="changeView('Details')">Details</button>
+        <br>
+        <button class="buton_nav" (click)="changeView('Modifications')">Modifications</button>
+        <br>
+        <button class="buton_nav" (click)="changeView('Events')">Events</button>
+        <br>
+        <button class="buton_nav" (click)="changeView('Extras')">Extras</button>
+      </ng-template>
+    </div>
+
+    <div class="content">
+
+      <div *ngIf="contentView === 'None' ">
+        <h4>Select a car</h4>
+      </div>
+
+      <div *ngIf="contentView === 'AddCar' ">
+        <h4>Add Car</h4>
+        <form [formGroup]="addCarForm" (ngSubmit)="addCar()">
+          <label>General Informations</label>
+          <div class="input-space">
+            <input  class="inputu" type="text" placeholder="Chassis"   formControlName="chassisNumber" >
+
+
+            <input class="inputu" type="text" placeholder="Body Type" formControlName="bodyType">
+            <input class="inputu" type="text" placeholder="Color" formControlName="color">
+            <input class="inputu" type="text" placeholder="Gearbox" formControlName="gearbox">
+            <input class="inputu" type="text" placeholder="Manufacturer" formControlName="manufacturer">
+            <input class="inputu" type="number" placeholder="Manufacturing Year" formControlName="manufacturingYear">
+            <input class="inputu" type="text" placeholder="Model" formControlName="model">
+            <input class="inputu" type="number" placeholder="Number of Doors" formControlName="noDoors" >
+            <input class="inputu" type="number" placeholder="Number of Km" formControlName="noKm">
+            <input class="inputu" type="number" placeholder="Number of Seats" formControlName="noSeats">
+            <input class="inputu" type="text" placeholder="Transmission" formControlName="transmission">
+          </div>
+          <br><label>Engine informations</label>
+          <div class="input-space">
+            <input class="inputu" type="text" placeholder="Serial" formControlName="serial">
+            <input class="inputu" type="text" placeholder="Fuel Type" formControlName="fuelType">
+            <input class="inputu" type="number" placeholder="Horsepower" formControlName="horsepower">
+            <input class="inputu" type="number" placeholder="Liters" formControlName="liters">
+          </div>
+          <br><label>Wheels informations</label>
+          <div class="input-space">
+            <input class="inputu" type="number" placeholder="Diameter" formControlName="diameter">
+            <input class="inputu" type="number" placeholder="Number of Wheels" formControlName="noWheels">
+            <input class="inputu" type="number" placeholder="Width" formControlName="width">
+            <br>
+          </div>
+
+          <small class="error" *ngIf="clickedAdd === true && getErrorMessage() ">{{getErrorMessage()}}</small>  <!--addCarForm.controls['chassisNumber'].errors?.['required']-->
+            <br>
+          <button class="butonu" type="submit" >Submit</button> <!--(click)="clickedAdd(true)" [disabled]="addCarForm.invalid"-->
+        </form>
+      </div>
+
+      <div *ngIf="contentView === 'Details' ">
+        <h4>Car's details</h4>
+        <app-render-car [car]="currentCarDetails"></app-render-car>
+
+      </div>
+
+      <div *ngIf="contentView === 'Modifications' " class="modifications">
+
+        <h4>Modify:</h4>
+        <label>Kilometers</label><br>
+        <input  id="km_input" type="number" placeholder=""/>
+        <button class="butonu" (click)="modifyKm()">Save</button>
+        <br>
+        <label>Color</label><br>
+        <input type="text" id="color_input" placeholder=""/>
+        <button class="butonu" (click)="modifyColor()">Save</button>
+        <br>
+
+        <label>Transfer</label><br>
+        <input type="text" id="transfer_input" placeholder=""/>
+        <button class="butonu" (click)="modifyTranfer()">Save</button>
+        <br>
+
+        <label>Number of seats</label><br>
+        <input type="number" id="nos_input" placeholder=""/>
+        <button class="butonu" (click)="modifyNoseats()">Save</button>
+        <br>
+
+        <label>Number of doors</label><br>
+        <input type="number" id="nod_input" placeholder=""/>
+        <button class="butonu" (click)="modifyNodoors()">Save</button>
+        <br>
+
+        <label>Transmission</label><br>
+        <input type="text" id="trans_input" placeholder=""/>
+        <button class="butonu" (click)="modifyTransmission()">Save</button>
+        <br>
+        <label>Gearbox</label><br>
+        <input type="text" id="gear_input" placeholder=""/>
+        <button class="butonu" (click)="modifyGearbox()">Save</button>
+        <br>
+
+        <label>Engine</label><br>
+        <input type="text" id="es_input" placeholder="Serial"/>
+        <input type="number" id="el_input" placeholder="Liters"/>
+        <input type="number" id="eh_input" placeholder="Horsepower"/>
+        <input type="text" id="ef_input" placeholder="Fuel Type"/>
+        <button class="butonu" (click)="modifyEngine()">Save</button>
+        <br>
+
+        <label>Wheels</label><br>
+        <input type="number" id="wn_input" placeholder="Number of wheels"/>
+        <input type="number"  id="wd_input" placeholder="Diameter"/>
+        <input type="number" id="ww_input" placeholder="Width"/>
+        <button class="butonu" (click)="modifyWheels()">Save</button>
+
+
+        <div class="addModification">
+          <h4>Add a custom modification</h4>
+          <label>Modification Type</label><br>
+          <select  [(ngModel)]="selectModification">
+            <option *ngFor="let option of partKeyNames" [ngValue]="option">{{ option }}</option>
+          </select> <br>
+          <label>Additional Details</label><br>
+          <textarea [(ngModel)]="modificationDetails"></textarea><br>
+          <button class="butonu"(click)="addModification()">Add modification</button>
+        </div>
+
+        <h4>Past Modifications</h4>
+        <app-render-modifications [modifications]="currentCarDetails.modificationHistory"></app-render-modifications>
+
+      </div>
+
+
+      <div *ngIf="contentView === 'Events' ">
+
+        <div class="addEvent">
+          <h4>Add Event</h4>
+          <label>Event Name</label><br>
+          <select [(ngModel)]="selectedEvent">
+            <option *ngFor="let option of eventKeyNames" [ngValue]="option">{{ option }}</option>
+          </select> <br>
+          <label>Additional Details</label><br>
+          <textarea [(ngModel)]="eventDetails"></textarea><br>
+          <button class="butonu" (click)="addEvent()">Add event</button>
+        </div>
+
+        <h4>Past Events</h4>
+        <app-render-events [eventHistory]="currentCarDetails.eventHistory"></app-render-events>
+
+      </div>
+
+      <div *ngIf="contentView === 'Extras' ">
+        <div class="addExtra">
+          <h4>Add an extra</h4>
+          <label>Explain the extra added</label><br>
+          <textarea [(ngModel)]="extraDetails"></textarea><br>
+          <button class="butonu" (click)="addExtra()">Add extra</button>
+        </div>
+        <h4>Car's extras</h4>
+        <app-render-extras [extras]="currentCarDetails.extra"></app-render-extras>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>

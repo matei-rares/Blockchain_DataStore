@@ -1,0 +1,33 @@
+
+.topbar{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+.autocheck-label {
+  margin-left:4%;
+}
+
+.buttons {
+  margin-left: 3%;
+  width: 100%;
+
+}
+
+.profile-buttons {
+  margin-left: auto;
+  margin-right: 1%;
+}
+
+@media (max-width: 500px) {
+  .buttons {
+    display: none;
+  }
+}
+
+

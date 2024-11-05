@@ -1,0 +1,55 @@
+<div *ngIf="car" class="data">
+
+
+
+  <ng-container *ngIf="transfer != '' || reversedOdometer === true">
+    <h3>Notes</h3>
+    <ng-container *ngIf="transfer != '' ">
+      <label>This car has changed the VIN to: {{ transfer }}</label><br>
+    </ng-container>
+    <ng-container *ngIf="reversedOdometer === true ">
+      <label>This car's mileage is rolled back</label><br>
+    </ng-container>
+  </ng-container>
+
+  <h3>General Info</h3>
+  <div *ngFor="let category of generalInfoKeys">
+    <label>{{ addSpaceBeforeCapital(category) }}: {{ generalInfo[category.toString()] }}</label><br>
+  </div>
+
+  <h3>Engine Info</h3>
+  <div *ngFor="let category of engineInfoKeys">
+    <label>{{ addSpaceBeforeCapital(category) }}: {{ engineInfo[category.toString()] }}</label><br>
+  </div>
+
+  <h3>Wheels Info</h3>
+  <div *ngFor="let category of wheelsInfoKeys">
+    <label>{{ addSpaceBeforeCapital(category) }}: {{ wheelsInfo[category.toString()] }}</label><br>
+  </div>
+
+  <h3>Analysis</h3>
+  <div class="analisis"> <div [ngClass]="getStatusColor(analisis_ky)" class="circle"> </div>   {{getTextByValue(analisis_ky)}} the mileage has been rolled back  </div>
+
+
+ <!-- # daune tehnice ascunse - ascuns 10
+  # pasibil de probleme tehnice viitoare - pasibil 01
+-->
+  <div class="analisis"> <div [ngClass]="getStatusColor(analisis_ms[1])" class="circle"> </div> {{getTextByValue(analisis_ms[1])}} the car might have future technical problems</div>
+ <!-- # daune majore - majore 10
+  # daune tehnice ascunse - ascuns 01-->
+  <div class="analisis"> <div [ngClass]="getStatusColor(analisis_cds[0])" class="circle"> </div> {{getTextByValue(analisis_cds[0])}} the car has major damages </div>
+  <div class="analisis"> <div [ngClass]="getStatusColor(getBiggestValue(analisis_cds[1],analisis_ms[0]))" class="circle"> </div>{{getTextByValue(getBiggestValue(analisis_cds[1],analisis_ms[0]))}} the car has hidden technical damages </div>
+
+  <h3>Modification history</h3>
+  <app-render-modifications [modifications]="modificationHistory"></app-render-modifications>
+  <h3>Event history</h3>
+  <app-render-events [eventHistory]="eventHistory"></app-render-events>
+  <h3>Extras</h3>
+  <app-render-extras [extras]="extra"></app-render-extras>
+
+
+</div>
+
+<div *ngIf="!car">
+  <h2>Wait a minute!</h2>
+</div>

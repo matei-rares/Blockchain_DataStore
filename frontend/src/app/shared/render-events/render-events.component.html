@@ -1,0 +1,7 @@
+
+<div *ngFor="let eventData of eventHistory">
+  <label> {{ getEventNameByValue(eventData.eventEnum) }} :  {{ eventData.details }} <label style="font-size: x-small"> ( made by {{ eventData.id }} in {{  datePipe.transform(eventData.timestamp * 1000, 'yyyy-MM-dd') }} )</label>
+</label><br>
+</div>
+  <!--<label>{{ event.userId }}</label>-->
+<label *ngIf="eventHistory.length === 0">------</label>

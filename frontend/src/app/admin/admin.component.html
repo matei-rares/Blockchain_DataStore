@@ -1,0 +1,45 @@
+<div class="content">
+
+  <h2>User manager</h2>
+
+
+    <div class="create_user">
+      <h3>Create a new user</h3>
+      <form [formGroup]="createUserForm" (ngSubmit)="createUser($event)">
+        <input type="text" formControlName="name" placeholder="Name"><br>
+        <input type="text" formControlName="username" placeholder="Username"><br>
+        <input type="password" formControlName="password" placeholder="Password"><br>
+        <input type="text" formControlName="company" placeholder="Company"><br>
+        <button type="submit" class="butonu" (click)="initializeUsers()">Add User</button>
+      </form>
+    </div>
+    <div class="users">
+      <table><!--*ngIf="displayedFsEntryJsons.length !==0">-->
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Username</th>
+          <th>Name</th>
+          <th>Company</th>
+          <th>Is Active</th>
+        </tr>
+        </thead>
+        <ng-container *ngFor="let user of users; let index=index">
+          <tbody style="border:solid 1px">
+          <tr style="border:solid 1px" [class.highlight]="selectedRow === index"
+              (click)="onRowClick($event,user,index)"
+              (dblclick)="changeStatus($event,user)"
+          >
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.company }}</td>
+            <td>{{ user.is_active == 1 ? "Yes" : "No" }}</td>
+
+          </tr>
+          </tbody>
+        </ng-container>
+      </table>
+
+    </div>
+</div>

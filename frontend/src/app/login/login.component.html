@@ -1,0 +1,20 @@
+<div class="main">
+  <div class="loginform">
+    <h2>Login</h2>
+
+
+    <form [formGroup]="loginForm" (ngSubmit)="login($event)">
+      <input type="text" id="usernameField" formControlName="usernameField" placeholder="Username"><br>
+      <input type="password" id="passwordField" formControlName="passwordField" placeholder="Password">
+
+
+      <div *ngIf="showLoginError" class="validation-message-chassis">
+        {{ errorMessage }}
+      </div>
+      <br>
+      <button class="butonu" type="submit">Login</button>
+
+
+    </form>
+  </div>
+</div>

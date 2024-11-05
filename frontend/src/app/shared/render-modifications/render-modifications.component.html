@@ -1,0 +1,6 @@
+<div *ngFor="let modification of modifications">
+  <label >{{ getPartNameByValue(modification.partEnum) }} : {{ modification.details }} <label style="font-size: x-small"> ( made by {{ modification.userId }} in {{  datePipe.transform(modification.timestamp * 1000, 'yyyy-MM-dd') }} )</label>
+  </label><br>
+  <!--<label>{{ event.userId }}</label>-->
+</div>
+<label *ngIf="modifications.length === 0">------</label>

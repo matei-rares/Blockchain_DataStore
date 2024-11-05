@@ -1,0 +1,47 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Car API",
+    "description": "API for managing cars",
+    "version": "1.0"
+  },
+  "basePath": "/",
+  "paths": {
+    "/car/{chassis}": {
+      "get": {
+        "summary": "Get car information by chassis number",
+        "parameters": [
+          {
+            "name": "chassis",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Chassis number of the car"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "chassis": {
+                  "type": "string"
+                },
+                "make": {
+                  "type": "string"
+                },
+                "model": {
+                  "type": "string"
+                },
+                "year": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

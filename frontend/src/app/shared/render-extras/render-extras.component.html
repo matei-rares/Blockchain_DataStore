@@ -1,0 +1,9 @@
+<div *ngFor="let extra of extras; let i = index">
+
+  <label> {{i+1}}:  {{ extra.details }} <label style="font-size: x-small"> ( made by {{ extra.userId }} in {{  datePipe.transform(extra.timestamp * 1000, 'yyyy-MM-dd') }} )</label>
+  </label><br>
+</div>
+<label *ngIf="extras.length === 0">------</label>
+  <!--<label>{{ event.userId }}</label>-->
+<!-- todo adaugat timp -->
+<!-- todo id este userId-->

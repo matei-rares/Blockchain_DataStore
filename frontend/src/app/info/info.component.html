@@ -1,0 +1,22 @@
+<div class="content">
+
+  <h1>Car with VIN {{this.titleVIN}}</h1>
+
+  <div class="topbar">
+    <form [formGroup]="searchForm" (ngSubmit)="searchCar($event)">
+      <input type="text" id="chassisField" formControlName="chassisField">
+      <button class="butonu" type="submit">Search</button>
+      <div class="validation-message-container">
+          <span *ngIf="showChassisError" class="validation-message-chassis">
+            {{errorMesage}}
+          </span>
+      </div>
+    </form>
+  </div>
+
+  <div class="main-content">
+    <app-render-car [car]="carInfo"></app-render-car>
+  </div>
+
+
+</div>
