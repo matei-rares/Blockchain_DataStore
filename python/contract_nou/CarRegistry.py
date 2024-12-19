@@ -78,7 +78,6 @@ import subprocess
 
 
 class CarRegistry:
-    # TODO aduaga parte de gestionare useri
     GANACHE_URL = "http://127.0.0.1:8545"
     # GAS_PRICE = Web3(Web3.HTTPProvider(GANACHE_URL)).to_wei('20', 'gwei')
     # GAS_LIMIT = 600000000
