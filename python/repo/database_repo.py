@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from CustomException import CustomException
 
-# Daca devine enervant warningu ala
+# Pentru a elimina warning-ul de la inceput
 # import warnings
 # warnings.filterwarnings("ignore")
 file_path = 'repo/users.db'

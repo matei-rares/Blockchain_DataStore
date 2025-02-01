@@ -148,13 +148,13 @@ class ModelMS(Model):
         return [str(predictions[0][0]) , str(predictions[0][1]) ]
 
 
-# def tust():
-#     model = ModelMS()
-#     #model.train(False,False,False)
-#     model.load()
-#     while True:
-#         model.predict()
-#
+def tust():
+    model = ModelMS()
+    #model.train(False,False,False)
+    model.load()
+    while True:
+        model.predict()
+
 # tust()
 
 '''

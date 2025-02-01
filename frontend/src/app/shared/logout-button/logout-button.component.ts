@@ -12,7 +12,6 @@ export class LogoutButtonComponent {
 
   constructor(private httpService:HttpService,private router:Router, private storageService:StorageService) {}
 
-
   logout() {
     localStorage.removeItem('token');
     this.storageService.setAdmin(false);

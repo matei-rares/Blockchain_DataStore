@@ -19,7 +19,7 @@ export class LoginComponent {
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      /*usernameField: ['', Validators.required], // todo cand nu testez
+      /*usernameField: ['', Validators.required], // todo delete when not testing
       passwordField: ['', Validators.required]*/
       usernameField: [''],
       passwordField: ['']
@@ -33,12 +33,10 @@ export class LoginComponent {
       let username = this.loginForm.value.usernameField
       let password = this.loginForm.value.passwordField
 
-      if (username==="" && password ===""){ // todo de scos cand nu testez
+      if (username==="" && password ===""){ // todo delete when not testing
         username = "user1";
         password = "parola";
       }
-      //todo citit despre salt si hash https://www.troyhunt.com/our-password-hashing-has-no-clothes/
-      // pt ca aparent nu mai e ok sa folosesti doar hash https://stackoverflow.com/questions/43893516/how-to-implement-sha-256-encryption-in-angular2
 
       this.requests.login({username: username, password: password}).subscribe(data => {
         console.log(data);

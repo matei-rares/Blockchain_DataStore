@@ -80,7 +80,7 @@ export class RenderCarComponent {
 
   getTextByValue(value: number): string {
     if (value < 0.5) {
-      return "It is unlikely that ";//"ca km sa fie dati inapoi" the mileage has been rolled back
+      return "It is unlikely that ";//the mileage has been rolled back
     } else if (value >= 0.5 && value < 0.7) {
       return 'There is a low chance that ';
     } else if (value >= 0.7) {

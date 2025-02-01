@@ -1,16 +1,9 @@
-
-
-
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-
-  //////////////////////
-
-
 
   .create_user {
     flex: 1;
@@ -43,8 +36,6 @@
 
   .users {
 
-
-
     table {
       border-collapse: collapse;
     }
@@ -62,13 +53,4 @@
 .highlight {
   background-color: #ffc9b0;
 }
-
-////////////////////////////////
-
-
-
-
-
-
-
 

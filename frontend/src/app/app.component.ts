@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
   showAdmin: boolean = false;
   showProfileButton:boolean=false;
 
-  //todo gasit cum se face salvatul imaginii in ipfs
   constructor(private httpService: HttpService, private storageService: StorageService, private router: Router,private fb:FormBuilder) {
     // this.image = undefined;
     // const ipfs = require('ipfs-api')('localhost', '5001');
@@ -66,8 +65,6 @@ export class AppComponent implements OnInit {
 
   }
 
-  //ipfsHash: string;
-
   redirectToProfile() {
     if (this.showUser) {
       this.router.navigate(['/user']);
@@ -76,9 +73,6 @@ export class AppComponent implements OnInit {
       this.router.navigate(['/admin']);
     }
   }
-
-
-
 
   logout() {
     localStorage.removeItem('token');

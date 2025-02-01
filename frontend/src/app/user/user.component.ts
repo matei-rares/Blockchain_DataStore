@@ -98,7 +98,6 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     sessionStorage.setItem('sessionRedirect', 'false')
     this.getChassies()
-    //todo de test
     //this.initializeCarDetails('12345678')
     this.changeView("Modifications")
     this.clickedAdd = false;

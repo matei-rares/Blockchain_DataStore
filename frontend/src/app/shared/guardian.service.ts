@@ -15,7 +15,7 @@ export class Guardian implements CanActivate {
     let tok = localStorage.getItem('token')
     var auth: boolean = tok != null && true && tok != ""
 
-    // daca exista token, daca nu merge la home
+    // daca nu exista token merge la home
     if (auth) {
       //daca tokenu nu mai e valid merge la login
       return this.requests.refresh().pipe(

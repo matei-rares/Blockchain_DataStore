@@ -31,8 +31,6 @@ export class HomeComponent implements OnInit {
   }
 
 
-
-
   getErrorMessage() {
     if (this.anyRequiredFieldInvalid()) {
       return 'All fields are required';
@@ -87,7 +85,7 @@ export class HomeComponent implements OnInit {
     let tok = localStorage.getItem('token')
     var auth: boolean = tok != null && true && tok != ""
 
-    // daca nu  a ajuns pe user sau admin va fi redirectionat acolo
+    // daca nu a ajuns pe user sau admin va fi redirectionat acolo
     // daca exista token, daca nu merge la home
 
     if (auth) {
@@ -95,8 +93,6 @@ export class HomeComponent implements OnInit {
       if (!redirectUser) {
         return
       }
-
-
 
       //daca tokenu nu mai e valid merge la login
       this.requests.refresh().subscribe(data => {
@@ -135,10 +131,7 @@ export class HomeComponent implements OnInit {
     console.log(this.registerForm.value)
 
     if (this.registerForm.invalid) {
-
-
-
-
+      
       console.log("Invalid form")
       Swal.fire({
         position: "top-end",

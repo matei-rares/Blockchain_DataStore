@@ -2,9 +2,6 @@ from repo.database_repo import get_user_by_username, get_user_by_id
 from security.security_service import *
 from CustomException import *
 
-
-
-
 def login_user(username, password):
     password = hash_password(password)
     user = get_user_by_username(username)
@@ -21,14 +18,11 @@ def login_user(username, password):
         print("Username gresit!")
         raise CustomException("Wrong credentials!", 401)
 
-
-
 def get_role_by_id(id):
     user = get_user_by_id(id)
     if user:
         return user.role
     raise CustomException("User not found!", 404)
-
 
 def change_password(token, curr, new):
     decoded = decode_and_verify_token(token)
