@@ -1,0 +1,44 @@
+Modified MIT License with Profit-Sharing Clause
+
+Copyright (c) 2025 Matei Rares
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, subject to the following conditions:
+
+Profit-Sharing Requirement
+If the Software is used as a in a commercial product or service that
+generates revenue, the Licensee agrees to pay the Licensor 50% of the net
+profits derived from such use. Payments shall be made on a annual basis.
+
+Reporting and Payment Terms
+The Licensee shall maintain accurate financial records and provide the
+Licensor with a detailed revenue report within 5 days of the end of
+each reporting period. Payments shall be made via bank transfer within
+10 days of the report submission.
+
+Compliance and Audit Rights
+The Licensor reserves the right to audit the Licensee’s records up to 12 times
+per year to ensure compliance. If discrepancies exceeding 1% are found, the
+Licensee shall bear the audit costs.
+
+Warranty Disclaimer
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Termination
+This Agreement may be terminated if the Licensee fails to comply with payment
+obligations or violates the terms. Upon termination, the Licensee must cease all
+use of the Software.
+
+Governing Law
+This Agreement shall be governed by the laws of Romania. Any disputes shall be
+resolved in the courts of Romania.
+
+By using the Software, the Licensee agrees to the terms outlined in this Agre
