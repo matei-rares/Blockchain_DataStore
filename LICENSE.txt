@@ -41,4 +41,4 @@ Governing Law
 This Agreement shall be governed by the laws of Romania. Any disputes shall be
 resolved in the courts of Romania.
 
-By using the Software, the Licensee agrees to the terms outlined in this Agre
+By using the Software, the Licensee agrees to the terms outlined in this Agreement.
